@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .slider{
+        @apply grid;
+        grid-template-areas: "slide";
+    }
+
+    .slider-childs{
+        @apply before:absolute before:inset-0 
+        before:bg-gradient-to-b from-transparent to-black;
+        grid-area: slide;
+    }
+
+    .slider-next{
+        grid-area: slide;
+        @apply z-[100] self-center justify-self-start;
+    }
+
+    .slider-prev{
+        grid-area: slide;
+        @apply z-[100] self-center justify-self-end;
+    }
+}
